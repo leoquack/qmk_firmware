@@ -18,5 +18,8 @@
 //#define NO_ACTION_LAYER
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
+<<<<<<< HEAD
 
 #define LED_CAPS_LOCK_PIN GP26
+=======
+>>>>>>> 3340c010df (quack2)
