@@ -1,0 +1,54 @@
+{
+    "manufacturer": "Leonidas Stratigakis",
+    "keyboard_name": "leoquack_led_test",
+    "maintainer": "Leonidas Stratigakis",
+    "bootloader": "rp2040",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": false,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true
+    },
+    "matrix_pins": {
+        "cols": [
+            "GP2",
+            "GP11"
+        ],
+        "rows": [
+            "GP3",
+            "GP12"
+        ]
+    },
+    "processor": "RP2040",
+    "url": "",
+    "usb": {
+        "device_version": "1.0.0",
+        "pid": "0x0000",
+        "vid": "0xFEED"
+    },
+    "layouts": {
+        "LAYOUT_2x2": {
+            "layout": [
+                {
+                    "matrix": [
+                        0,
+                        0
+                    ],
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "matrix": [
+                        1,
+                        1
+                    ],
+                    "x": 1,
+                    "y": 1
+                }
+            ]
+        }
+    }
+}
