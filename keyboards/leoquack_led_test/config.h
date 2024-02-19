@@ -1,4 +1,4 @@
-// Copyright 2023 Leonidas Stratigakis (@Leonidas Stratigakis)
+// Copyright 2024 Leonidas Stratigakis (@Leonidas Stratigakis)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
@@ -19,4 +19,4 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-#define LED_CAPS_LOCK_PIN GP26
+#define LED_CAPS_LOCK_PIN GP15
