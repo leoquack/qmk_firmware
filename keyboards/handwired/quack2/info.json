@@ -17,12 +17,15 @@
         "cols": ["GP6", "GP7", "GP8", "GP9", "GP10", "GP11", "GP13", "GP12", "GP14", "GP15", "GP16", "GP17", "GP18", "GP19"],
         "rows": ["GP0", "GP1", "GP2", "GP3", "GP4", "GP5", "GP22"]
     },
+    "bootmagic": {
+        "matrix": [5, 0]
+    },
     "processor": "RP2040",
     "url": "",
     "usb": {
-        "device_version": "1.0.0",
-        "pid": "0x0000",
-        "vid": "0xFEED"
+        "device_version": "2.0.0",
+        "pid": "0x7632",
+        "vid": "0x5142"
     },
     "encoder": {
         "rotary": [

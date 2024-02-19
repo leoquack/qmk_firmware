@@ -31,3 +31,4 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [1] =   { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN) },
 };
 #endif
+
