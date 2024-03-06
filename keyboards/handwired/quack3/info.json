@@ -29,12 +29,13 @@
     },
     "encoder": {
         "rotary": [
-            { "pin_a": "GP0", "pin_b": "GP1", "resolution": 2 }
+            { "pin_a": "GP0", "pin_b": "GP1", "resolution": 4 }
         ]
     },
     "layouts": {
         "LAYOUT_7x14": {
             "layout": [
+                {"matrix": [1, 1], "label":"Rotary push switch", "x":14,"y":0},
                 {"matrix": [0, 12], "label":"Calculator", "x":11.5,"y":0},
 
                 {"matrix": [5, 0], "label":"Esc","x":0,"y":1.5},
