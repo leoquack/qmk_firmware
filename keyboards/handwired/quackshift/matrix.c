@@ -18,20 +18,20 @@ static inline uint8_t read_rows(void) {
   return r;
 }
 
+
 static inline void shift_out(uint16_t value) {
+  uint8_t message[2] = { (value >> 8) & 0xFF, (uint8_t)(value & 0xFF) };
 
-  uint8_t message[2]  = {(value >> 8) & 0xFF ,(uint8_t)(value & 0xFF) };
-
-//  writePinLow(SPI_LATCH_PIN);
-  spi_start(SPI_LATCH_PIN, SPI_lsbFirst, SPI_MODE, SPI_DIVISOR);
-  spi_transmit(message,2);
+//  writePinLow(SPI_CS_PIN);
+  spi_start(SPI_CS_PIN, SPI_lsbFirst, SPI_MODE, SPI_DIVISOR);
+  spi_transmit(message, 2);
   spi_stop();
-//  writePinHigh(SPI_LATCH_PIN);
+//  writePinHigh(SPI_CS_PIN);
 //  matrix_output_select_delay();
 }
 
 static inline void select_col(uint8_t col) {
-    shift_out(col_values[col]);
+  shift_out(col_values[col]);
 }
 
 void matrix_init_custom(void) {
@@ -42,8 +42,8 @@ void matrix_init_custom(void) {
   spi_init();
   matrix_io_delay();
 
-  setPinOutput(SPI_LATCH_PIN);
- // spi_start(SPI_LATCH_PIN, true, 3, SPI_DIVISOR);
+  setPinOutput(SPI_CS_PIN);
+ // spi_start(SPI_CS_PIN, true, 3, SPI_DIVISOR);
   matrix_io_delay();
 }
 
@@ -55,9 +55,9 @@ bool matrix_scan_custom(matrix_row_t current_matrix[]) {
 
         uint8_t rows = read_rows();
         for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
-             current_matrix[row] |= (((rows & (1 << row))? 1 : 0) << col);
-            }
+          current_matrix[row] |= (((rows & (1 << row))? 1 : 0) << col);
         }
+    }
     bool changed = (memcmp(current_matrix, prev_matrix, msize) != 0);
     memcpy(prev_matrix, current_matrix, msize);
     return changed;
