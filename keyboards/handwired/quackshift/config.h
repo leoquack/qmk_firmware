@@ -21,7 +21,7 @@
 
 // Define your HC595 pin mappings
 #define SPI_DRIVER SPID0
-#define SPI_MOSI_PIN GP0
+#define SPI_MOSI_PIN GP3
 #define SPI_SCK_PIN GP2
 #define SPI_CS_PIN GP1
 #define SPI_DIVISOR 16
