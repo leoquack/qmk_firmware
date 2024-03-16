@@ -3,6 +3,10 @@
 #include "wait.h"
 #include "spi_master.h"
 
+#if defined(CONSOLE_ENABLE)
+#    include "print.h"
+#endif
+
 static const uint16_t col_values[MATRIX_COLS] = COLS;
 static const pin_t row_pins[MATRIX_ROWS] = ROWS;
 
@@ -19,24 +23,18 @@ static inline uint8_t read_rows(void) {
 }
 
 
-static inline void shift_out(uint16_t value) {
-  uint8_t message[2] = { (value >> 8) & 0xFF, (uint8_t)(value & 0xFF) };
-
-  // writePinLow(SPI_COL_MATRIX_CS_PIN);
+static inline void select_col(uint8_t col) {
+  uint8_t message[2] = { (col_values[col] >> 8) & 0xFF, (uint8_t)(col_values[col] & 0xFF) };
 
   spi_start(SPI_COL_MATRIX_CS_PIN, SPI_lsbFirst, 0, SPI_DIVISOR);
   spi_transmit(message, 2);
   spi_stop();
-
-  // writePinHigh(SPI_COL_MATRIX_CS_PIN);
-  // matrix_output_select_delay();
-}
-
-static inline void select_col(uint8_t col) {
-  shift_out(col_values[col]);
 }
 
 void matrix_init_custom(void) {
+#if defined(CONSOLE_ENABLE)
+  wait_ms(1000);
+#endif
   for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
     setPinInputLow(row_pins[row]);
   }
