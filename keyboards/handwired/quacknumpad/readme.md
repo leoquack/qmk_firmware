@@ -2,10 +2,10 @@
 
 ![quacknumpad](imgur.com image replace me!)
 
-A custom handwired numpad with function keys, using shift registers for column scanning.
+A custom handwired numpad with function keys.
 
 * Keyboard Maintainer: [Leonidas Stratigakis](https://github.com/leoquack)
-* Hardware Supported: RP2040, HC595 shift registers
+* Hardware Supported: RP2040
 * Hardware Availability: Handwired
 
 Make example for this keyboard (after setting up your build environment):
