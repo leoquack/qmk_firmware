@@ -10,8 +10,6 @@
         "console": false,
         "extrakey": true,
         "mousekey": true,
-<<<<<<< HEAD
-<<<<<<< HEAD
         "nkro": true,
         "encoder": true
     },
@@ -46,67 +44,9 @@
             5,
             0
         ]
-=======
-        "nkro": true
-    },
-    "matrix_pins": {
-        "cols": [
-            "C2",
-            "C2",
-            "C2",
-            "C2"
-        ],
-        "rows": [
-            "D1",
-            "D1",
-            "D1",
-            "D1"
-        ]
->>>>>>> 3340c010df (quack2)
-=======
-        "nkro": true,
-        "encoder": true
-    },
-    "matrix_pins": {
-        "cols": [
-            "GP15",
-            "GP14",
-            "GP13",
-            "GP12",
-            "GP11",
-            "GP10",
-            "GP9",
-            "GP8",
-            "GP7",
-            "GP6",
-            "GP5",
-            "GP4",
-            "GP3",
-            "GP2"
-        ],
-        "rows": [
-            "GP16",
-            "GP17",
-            "GP18",
-            "GP19",
-            "GP20",
-            "GP21"
-        ]
-    },
-    "bootmagic": {
-        "matrix": [
-            5,
-            0
-        ]
->>>>>>> 87b973da14 (quack3 and led test)
     },
     "processor": "RP2040",
-    "url": "",
     "usb": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 87b973da14 (quack3 and led test)
         "device_version": "3.0.0",
         "pid": "0x7632",
         "vid": "0x5142"
@@ -119,7 +59,6 @@
                 "resolution": 2
             }
         ]
->>>>>>> 87b973da14 (quack3 and led test)
     },
     "layouts": {
         "LAYOUT_7x14": {
@@ -818,7 +757,3 @@
         }
     }
 }
-<<<<<<< HEAD
->>>>>>> 3340c010df (quack2)
-=======
->>>>>>> 87b973da14 (quack3 and led test)
