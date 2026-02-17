@@ -3,7 +3,12 @@
     "keyboard_name": "handwired/quackmux",
     "maintainer": "Leonidas Stratigakis",
     "bootloader": "rp2040",
+    "debounce": 5,
     "diode_direction": "COL2ROW",
+    "matrix_pins": {
+        "custom": true,
+        "custom_lite": true
+    },
     "features": {
         "bootmagic": true,
         "command": false,

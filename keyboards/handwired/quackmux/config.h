@@ -22,13 +22,12 @@
 
 /* GPIO Pin Definitions */
 // Column selection pins (directly drive transistor gates/bases)
-#define COL_PINS { GP0, GP1, GP2, GP3, GP4, GP5, GP10, GP11 }
+// Using GP12-GP19 for better PCB routing and to avoid USB/Debug pin conflicts
+#define COL_PINS { GP12, GP13, GP14, GP15, GP16, GP17, GP18, GP19 }
 
 // Row detection pins (direct GPIO reads with pull-down)
-#define ROW_PINS { GP6, GP7, GP8, GP9 }
-
-/* Enable Features */
-#define ENABLE_DEBOUNCE 5
+// Using GP20-GP21, GP22, GP26 (avoiding GP23-GP25 used for SPI flash on some boards)
+#define ROW_PINS { GP20, GP21, GP22, GP26 }
 
 /* Bootloader Configuration */
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
