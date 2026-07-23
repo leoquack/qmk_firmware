@@ -23,4 +23,5 @@
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
 
-// #define LED_NUM_LOCK_PIN GP14
+/* Maintained SPST layer switch: connect GP14 to GND when closed. */
+#define LAYER_SWITCH_PIN GP14

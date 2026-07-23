@@ -10,9 +10,10 @@ A custom handwired numpad with function keys.
 
 ## Default keymap
 
-The keyboard starts in normal numpad mode. Press **0 + Num Lock together** to
-toggle the drawing layer; press the same chord again to return to the numpad.
-The two keys keep their ordinary functions when pressed separately.
+The active layer is selected by a maintained two-pin SPST switch such as the
+KCD11-101. An open switch selects the normal numpad layer; closing the switch
+selects the drawing layer. The physical position therefore always shows which
+mode is active, without needing an indicator LED.
 
 ### Drawing layer
 
@@ -96,7 +97,7 @@ ROW5──┼──────┼──────┼──────┼─�
 ### Pin Assignments
 - **Rows:** GP6, GP7, GP8, GP9, GP10, GP11
 - **Columns:** GP0, GP1, GP2, GP3
-- **LED (Num Lock):** GP14
+- **Layer switch:** GP14
 
 ### Diode Direction: COL2ROW
 Each switch needs a diode with:
@@ -119,8 +120,13 @@ Each switch needs a diode with:
    - **Enter key (ROW4, COL3):** Physical key is 2u tall, but electrically just one switch  
    - **0 key (ROW5, COL0):** Physical key is 2u wide, but electrically just one switch
 
-4. **LED (Optional):**
-   - Num Lock LED: Connect LED anode to GP14 through 220Ω resistor, cathode to GND
+4. **Layer Switch:**
+   - Connect either KCD11-101 pin to **GP14**
+   - Connect the other switch pin to **GND**
+   - No resistor is needed; the firmware enables the RP2040's internal pull-up
+   - Switch open selects numpad mode; switch closed selects drawing mode
+   - The firmware debounces the switch and reads its position at startup, so
+     the correct layer is selected immediately after plugging in the keyboard
 
 ### Matrix Positions
 ```
