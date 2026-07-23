@@ -25,7 +25,7 @@ mode is active, without needing an indicator LED.
 | F4 | `]` | Increase brush size |
 | Num | F13 | Color Picker popup |
 | / | E | Eraser |
-| * | Ctrl + Shift + B | Pencil |
+| * | F18 | Pencil |
 | - | B | Brush |
 | 7 | Ctrl + Z | Undo |
 | 8 | Ctrl + Shift + Z | Redo |
@@ -43,7 +43,7 @@ mode is active, without needing an indicator LED.
 
 ### Application setup notes
 
-F13–F17 are useful macro-pad outputs because they normally have no existing
+F13–F18 are useful macro-pad outputs because they normally have no existing
 application action. QMK supports them as ordinary keycodes, while each drawing
 application can map them to its own equivalent command:
 
@@ -61,6 +61,9 @@ application can map them to its own equivalent command:
 - **F17 — Zoom In.** Assign F17 directly to the Zoom In command in each
   application. Using F16/F17 avoids differences in how applications interpret
   modifier-plus-mouse zoom gestures.
+- **F18 — Pencil.** Assign F18 directly to the Pencil tool in each application.
+  This avoids Clip Studio Paint's restriction that several drawing tools share
+  the single-key B shortcut.
 
 The remaining choices favor shortcuts that are common or easy to standardize:
 R selects Rotate View, L selects Lasso, Ctrl+0 fits the canvas to the screen,

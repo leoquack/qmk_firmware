@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_DRAWING] = LAYOUT(
         KC_F16,         KC_F17,         KC_LBRC,         KC_RBRC,
-        KC_F13,         KC_E,           C(S(KC_B)),      KC_B,
+        KC_F13,         KC_E,           KC_F18,          KC_B,
         C(KC_Z),        C(S(KC_Z)),     KC_F14,          KC_I,
         KC_R,           C(KC_S),        KC_F15,
         C(KC_T),        C(KC_D),        KC_L,            C(KC_0),
