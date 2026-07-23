@@ -8,6 +8,64 @@ A custom handwired numpad with function keys.
 * Hardware Supported: RP2040
 * Hardware Availability: Handwired
 
+## Default keymap
+
+The keyboard starts in normal numpad mode. Press **0 + Num Lock together** to
+toggle the drawing layer; press the same chord again to return to the numpad.
+The two keys keep their ordinary functions when pressed separately.
+
+### Drawing layer
+
+| Physical key | Output | Suggested action |
+|---|---|---|
+| F1 | Alt + Space + left click | Zoom out |
+| F2 | Ctrl + Space + left click | Zoom in |
+| F3 | `[` | Decrease brush size |
+| F4 | `]` | Increase brush size |
+| Num | F13 | Color Picker popup |
+| / | E | Eraser |
+| * | Ctrl + Shift + B | Pencil |
+| - | B | Brush |
+| 7 | Ctrl + Z | Undo |
+| 8 | Ctrl + Shift + Z | Redo |
+| 9 | F14 | Flip canvas horizontally |
+| + | I | Eyedropper |
+| 4 | R | Rotate View tool |
+| 5 | Ctrl + S | Save |
+| 6 | F15 | Reset canvas rotation |
+| 1 | Ctrl + T | Free Transform |
+| 2 | Ctrl + D | Deselect |
+| 3 | L | Lasso |
+| Enter | Ctrl + 0 | Fit to Screen |
+| 0 | Space | Hand/pan modifier |
+| . | Tab | Toggle interface/palettes |
+
+The zoom and pan keys remain held for as long as their physical keys are held,
+so they can be used while dragging rather than as one-shot macros.
+
+### Application setup notes
+
+F13–F15 are useful macro-pad outputs because they normally have no existing
+application action. QMK supports them as ordinary `KC_F13`, `KC_F14`, and
+`KC_F15` keycodes, while each drawing application can map them to its own
+equivalent command:
+
+- **F13 — Color Picker popup.** In Clip Studio Paint, open **File → Shortcut
+  Settings → Pop-up palettes → Color Wheel** and assign F13. This avoids
+  hard-coding Photoshop's HUD Color Picker mouse gesture in the shared layer.
+- **F14 — Flip Canvas Horizontal.** Assign F14 to the equivalent command in
+  both Photoshop and Clip Studio Paint. The physical key remains consistent
+  even though the applications' native shortcuts differ.
+- **F15 — Reset Canvas Rotation.** Assign F15 directly in each application.
+  This is safer than Escape, whose meaning depends on context and can cancel a
+  transformation, selection, dialog, or text edit.
+
+The remaining choices favor shortcuts that are common or easy to standardize:
+R selects Rotate View, L selects Lasso, Ctrl+0 fits the canvas to the screen,
+and Tab toggles panels/palettes in both Photoshop and Clip Studio Paint. If an
+application uses Ctrl+0 for something else, reassign its Fit to Screen command
+to Ctrl+0 or change the firmware output to an unused function key such as F16.
+
 ## Wiring Diagram
 
 ### Matrix Layout (6 rows × 4 columns)
