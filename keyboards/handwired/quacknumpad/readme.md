@@ -41,8 +41,9 @@ mode is active, without needing an indicator LED.
 | 0 | Space | Hand/pan modifier |
 | . | Tab | Toggle interface/palettes |
 
-The zoom and pan keys remain held for as long as their physical keys are held,
-so they can be used while dragging rather than as one-shot macros.
+The zoom keys hold their modifier, Space, and the virtual left mouse button for
+as long as their physical keys are held. In Clip Studio Paint, pressing and
+releasing the key produces one zoom click at the current pointer position.
 
 ### Application setup notes
 

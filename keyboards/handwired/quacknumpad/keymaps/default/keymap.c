@@ -106,9 +106,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_mods(keycode == ZOOM_OUT ? MOD_BIT(KC_LALT) : MOD_BIT(KC_LCTL));
                 register_code(KC_SPC);
-                register_code16(MS_BTN1);
+                mousekey_on(MS_BTN1);
+                mousekey_send();
             } else {
-                unregister_code16(MS_BTN1);
+                mousekey_off(MS_BTN1);
+                mousekey_send();
                 unregister_code(KC_SPC);
                 unregister_mods(keycode == ZOOM_OUT ? MOD_BIT(KC_LALT) : MOD_BIT(KC_LCTL));
             }
