@@ -8,11 +8,6 @@ enum layers {
     _DRAWING,
 };
 
-enum custom_keycodes {
-    ZOOM_OUT = SAFE_RANGE,
-    ZOOM_IN,
-};
-
 static bool     layer_switch_state;
 static bool     layer_switch_last_read;
 static uint32_t layer_switch_timer;
@@ -76,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /*
      * ┌──────────┬─────────┬───┬───┐
-     * │Zoom out  │Zoom in  │ [ │ ] │
+     * │F16       │F17      │ [ │ ] │
      * ├──────────┼─────────┼───┼───┤
      * │F13       │ E       │Pcl│ B │
      * ├──────────┼─────────┼───┼───┤
@@ -90,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └────────────────────┴───┴───┘
      */
     [_DRAWING] = LAYOUT(
-        ZOOM_OUT,       ZOOM_IN,        KC_LBRC,         KC_RBRC,
+        KC_F16,         KC_F17,         KC_LBRC,         KC_RBRC,
         KC_F13,         KC_E,           C(S(KC_B)),      KC_B,
         C(KC_Z),        C(S(KC_Z)),     KC_F14,          KC_I,
         KC_R,           C(KC_S),        KC_F15,
@@ -98,24 +93,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_SPC,                                          KC_TAB
     ),
 };
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case ZOOM_OUT:
-        case ZOOM_IN:
-            if (record->event.pressed) {
-                register_mods(keycode == ZOOM_OUT ? MOD_BIT(KC_LALT) : MOD_BIT(KC_LCTL));
-                register_code(KC_SPC);
-                mousekey_on(MS_BTN1);
-                mousekey_send();
-            } else {
-                mousekey_off(MS_BTN1);
-                mousekey_send();
-                unregister_code(KC_SPC);
-                unregister_mods(keycode == ZOOM_OUT ? MOD_BIT(KC_LALT) : MOD_BIT(KC_LCTL));
-            }
-            return false;
-    }
-
-    return true;
-}

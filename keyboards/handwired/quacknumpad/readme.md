@@ -19,8 +19,8 @@ mode is active, without needing an indicator LED.
 
 | Physical key | Output | Suggested action |
 |---|---|---|
-| F1 | Alt + Space + left click | Zoom out |
-| F2 | Ctrl + Space + left click | Zoom in |
+| F1 | F16 | Zoom out |
+| F2 | F17 | Zoom in |
 | F3 | `[` | Decrease brush size |
 | F4 | `]` | Increase brush size |
 | Num | F13 | Color Picker popup |
@@ -41,16 +41,11 @@ mode is active, without needing an indicator LED.
 | 0 | Space | Hand/pan modifier |
 | . | Tab | Toggle interface/palettes |
 
-The zoom keys hold their modifier, Space, and the virtual left mouse button for
-as long as their physical keys are held. In Clip Studio Paint, pressing and
-releasing the key produces one zoom click at the current pointer position.
-
 ### Application setup notes
 
-F13–F15 are useful macro-pad outputs because they normally have no existing
-application action. QMK supports them as ordinary `KC_F13`, `KC_F14`, and
-`KC_F15` keycodes, while each drawing application can map them to its own
-equivalent command:
+F13–F17 are useful macro-pad outputs because they normally have no existing
+application action. QMK supports them as ordinary keycodes, while each drawing
+application can map them to its own equivalent command:
 
 - **F13 — Color Picker popup.** In Clip Studio Paint, open **File → Shortcut
   Settings → Pop-up palettes → Color Wheel** and assign F13. This avoids
@@ -61,6 +56,11 @@ equivalent command:
 - **F15 — Reset Canvas Rotation.** Assign F15 directly in each application.
   This is safer than Escape, whose meaning depends on context and can cancel a
   transformation, selection, dialog, or text edit.
+- **F16 — Zoom Out.** Assign F16 directly to the Zoom Out command in each
+  application.
+- **F17 — Zoom In.** Assign F17 directly to the Zoom In command in each
+  application. Using F16/F17 avoids differences in how applications interpret
+  modifier-plus-mouse zoom gestures.
 
 The remaining choices favor shortcuts that are common or easy to standardize:
 R selects Rotate View, L selects Lasso, Ctrl+0 fits the canvas to the screen,
